@@ -1,0 +1,36 @@
+{
+  "name": "humanize-duration",
+  "version": "0.0.0",
+  "description": "Human readable duration formats",
+  "author": "Julio Sampaio <juliodssampaio@gmail.com> (https://github.com/juliosampaio)",
+  "contributors": [],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliosampaio/humanize-duration.git"
+  },
+  "keywords": [
+    "human",
+    "readable",
+    "time",
+    "duration",
+    "format",
+    "parse",
+    "date"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juliosampaio/humanize-duration/issues"
+  },
+  "homepage": "https://github.com/juliosampaio/humanize-duration#readme",
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
+  }
+}
