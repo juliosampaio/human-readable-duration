@@ -1,0 +1,46 @@
+export const enUS = {
+  abbr: 'en-us',
+  NOW: 'now',
+  MINUTE: {
+    NAME: 'minute',
+    PAST_SINGULAR: '1 minute ago',
+    PAST_PLURAL: '{0} minutes ago',
+    FUTURE_SINGULAR: 'in 1 minute',
+    FUTURE_PLURAL: 'in {0} minutes',
+  },
+  HOUR: {
+    NAME: 'hour',
+    PAST_SINGULAR: '1 hour ago',
+    PAST_PLURAL: '{0} hours ago',
+    FUTURE_SINGULAR: 'in 1 hour',
+    FUTURE_PLURAL: 'in {0} hours',
+  },
+  DAY: {
+    NAME: 'day',
+    PAST_SINGULAR: 'yesterday',
+    PAST_PLURAL: '{0} days ago',
+    FUTURE_SINGULAR: 'tomorrow',
+    FUTURE_PLURAL: 'in {0} days',
+  },
+  WEEK: {
+    NAME: 'week',
+    PAST_SINGULAR: 'last week',
+    PAST_PLURAL: '{0} weeks ago',
+    FUTURE_SINGULAR: 'next week',
+    FUTURE_PLURAL: 'in {0} weeks',
+  },
+  MONTH: {
+    NAME: 'month',
+    PAST_SINGULAR: 'last month',
+    PAST_PLURAL: '{0} months ago',
+    FUTURE_SINGULAR: 'next month',
+    FUTURE_PLURAL: 'in {0} months',
+  },
+  YEAR: {
+    NAME: 'year',
+    PAST_SINGULAR: 'last year',
+    PAST_PLURAL: '{0} years ago',
+    FUTURE_SINGULAR: 'next year',
+    FUTURE_PLURAL: 'in {0} years',
+  },
+};
