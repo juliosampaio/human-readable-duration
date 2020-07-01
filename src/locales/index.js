@@ -1,8 +1,8 @@
 import { enUS } from './en-US';
 
-import { MINUTE, HOUR, DAY, WEEK, YEAR } from '../units';
+import { MINUTE, HOUR, DAY, WEEK, MONTH, YEAR } from '../units';
 
-const AVAILABLE_UNITS = [MINUTE, HOUR, DAY, WEEK, YEAR].map(
+const AVAILABLE_UNITS = [MINUTE, HOUR, DAY, WEEK, MONTH, YEAR].map(
   (unit) => unit.name,
 );
 
