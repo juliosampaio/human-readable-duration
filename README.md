@@ -8,6 +8,14 @@ Think of _moment.duration().humanize()_ but lightweight (only 3.5k).
 
 <small>_\* since you provide the translation_</small>
 
+## TOC
+
+- [Install](#install)
+- [Import](#import)
+- [Usage](#usage)
+- [API](#api)
+- [Locales](#locales)
+
 ## Install
 
 Pick your flavor:
@@ -17,7 +25,7 @@ Pick your flavor:
 | npm             | `npm install human-readable-duration` |
 | yarn            | `yarn add human-readable-duration`    |
 
-## Import it
+## Import
 
 Browser
 
@@ -42,7 +50,7 @@ const { humanize } = require('human-readable-duration');
 console.log(humanize().translate(date));
 ```
 
-## Use it
+## Usage
 
 ```js
 const dateInfuture = new Date();
@@ -77,7 +85,7 @@ humanize(
 ): Object
 ```
 
-Instantiates the translator function and returns the translation functions. Accepts a `locale` object to be used in all translations. See the [locale section](#locale) for more details on how to customize translations to other languges.
+Instantiates the translator function and returns the translation functions. Accepts a `locale` object to be used in all translations. See the [locales section](#locales) for more details on how to customize translations to other languges.
 
 ### `humanize().translate()`
 
@@ -186,3 +194,44 @@ Set **years** as the highest unit of time for the translation. eg:
 | Input                                   | Output              |
 | --------------------------------------- | ------------------- |
 | `humanize().asYears(fiveWeeksInFuture)` | in less than 1 year |
+
+## Locales
+
+The library uses en-US as the default locale, but one can easily override it passing a locale object to the `humanize()` function.
+
+```js
+
+const ptBr = {
+    NOW: 'agora',
+    MINUTE: {
+        NAME: 'minuto',
+        PAST_SINGULAR: 'há 1 minuto',
+        PAST_PLURAL: 'há {0} minutos',
+        . . .
+    },
+    . . .
+}
+
+const { translate } humanize(ptBr);
+
+console.log(translate(new Date()));
+//"agora"
+```
+
+You can even change only specific translations without the need to fully replace the default locale:
+
+```js
+const myLocale = {
+  MINUTE: {
+    FUTURE_SINGULAR: 'in one minute (hurry up!)',
+  },
+};
+
+const { translate } humanize(myLocale);
+console.log(translate(new Date()));
+//"now"
+console.log(translate(oneMinuteInFutureDate));
+//"in one minute (hurry up!)"
+```
+
+Please, check the [src/locales](/src/locales) folder for the required structure a locale file must have.
