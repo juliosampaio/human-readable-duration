@@ -4,7 +4,7 @@
   "description": "Human readable duration formats",
   "author": "Julio Sampaio <juliodssampaio@gmail.com> (https://github.com/juliosampaio)",
   "contributors": [],
-  "main": "index.js",
+  "main": "dist/humanize-duration.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
