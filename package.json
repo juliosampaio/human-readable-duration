@@ -7,7 +7,9 @@
   "main": "dist/humanize-duration.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint .",
+    "lint": "npm run lint:src && npm run lint:tests",
+    "lint:src": "eslint ./src",
+    "lint:tests": "eslint ./test",
     "build": "webpack --mode=production"
   },
   "repository": {
@@ -36,6 +38,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-jest": "^23.17.1",
     "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
     "webpack": "^4.43.0",
@@ -50,6 +53,11 @@
         "functions": 100,
         "lines": 100
       }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint && npm test"
     }
   }
 }
