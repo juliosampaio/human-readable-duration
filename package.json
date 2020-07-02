@@ -1,5 +1,5 @@
 {
-  "name": "humanize-duration",
+  "name": "human-readable-duration",
   "version": "0.0.0",
   "description": "Human readable duration formats",
   "author": "Julio Sampaio <juliodssampaio@gmail.com> (https://github.com/juliosampaio)",
