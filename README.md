@@ -4,23 +4,18 @@
 
 Translate a duration to a human friendly format in any language\* (eg. 2 weeks ago)
 
+Think of _moment.duration().humanize()_ but lightweight (only 3k).
+
 <small>_\* since you provide the translation_</small>
 
 ## Install
 
 Pick your flavor:
 
-NPM
-
-```sh
-npm install human-readable-duration
-```
-
-YARN
-
-```sh
-yarn add human-readable-duration
-```
+| Package manager | Command                               |
+| --------------- | ------------------------------------- |
+| npm             | `npm install human-readable-duration` |
+| yarn            | `yarn add human-readable-duration`    |
 
 ## Import it
 
@@ -63,9 +58,16 @@ expect(translation).toBe('2 minutes ago');
 
 ## API
 
-- [`humanize()`](#humanize)
+The library uses the current date as starting point, it means that all translations are relative to Date.now(). eg. if you add two minutes to the current time and call the `translate()` function, the library will translate it as _"in 2 minutes"_ (with the default locale).
 
-  - [.asMinutes()](#humanizeasminutes)
+- [`humanize()`](#humanize)
+  - [`.translate()`](#humanizetranslate)
+  - [`.asMinutes()`](#humanizeasminutes)
+  - [`.asHours()`](#humanizeashours)
+  - [`.asDays()`](#humanizeasdays)
+  - [`.asWeeks()`](#humanizeasweeks)
+  - [`.asMonths()`](#humanizeasmonths)
+  - [`.asYears()`](#humanizeasyears)
 
 ### `humanize()`
 
@@ -75,10 +77,112 @@ humanize(
 ): Object
 ```
 
-### `humanize().asMinutes()`
+Instantiates the translator function and returns the translation functions. Accepts a `locale` object to be used in all translations. See the [locale section](#locale) for more details on how to customize translations to other languges.
+
+### `humanize().translate()`
 
 ```js
-humanize.asMinutes(
+humanize().translate(
     date: Date
 ): String
 ```
+
+Translates the duration between `date` and `Date.now()` in a human friendly format. The long the duration the higher the unit of time is choosen for the translation. Available units of time are: minute, hours, days, weeks, months and years.
+
+| Input                                            | Output        |
+| ------------------------------------------------ | ------------- |
+| `humanize().translate(twoMinuteInPastDate)`      | 2 minutes ago |
+| `humanize().translate(oneMinuteInPastDate)`      | just now      |
+| `humanize().translate(new Date())`               | now           |
+| `humanize().translate(120MinutesInFutureDate)`   | in 2 hours    |
+| `humanize().translate(twoDaysInFutureDate)`      | in 2 days     |
+| `humanize().translate(tenWeeksInFutureDate)`     | in 10 weeks   |
+| `humanize().translate(fiveWeeksInFutureDate)`    | in 1 month    |
+| `humanize().translate(twelveMonthsInFutureDate)` | in 1 year     |
+
+### `humanize().asMinutes()`
+
+```js
+humanize().asMinutes(
+    date: Date
+): String
+```
+
+Set **minutes** as the highest unit of time for the translation. eg:
+
+| Input                                            | Output             |
+| ------------------------------------------------ | ------------------ |
+| `humanize().asMinutes(twoDaysInFutureDate)`      | in 2880 minutes    |
+| `humanize().asMinutes(twelveMonthsInFutureDate)` | in 525600 minutes  |
+| `humanize().asMinutes(twoDaysInPastDate)`        | 2880 minutes ago   |
+| `humanize().asMinutes(twelveMonthsInPastDate)`   | 525600 minutes ago |
+
+### `humanize().asHours()`
+
+```js
+humanize().asHours(
+    date: Date
+): String
+```
+
+Set **hours** as the highest unit of time for the translation. eg:
+
+| Input                                     | Output      |
+| ----------------------------------------- | ----------- |
+| `humanize().asHours(twoDaysInFutureDate)` | in 24 hours |
+
+### `humanize().asDays()`
+
+```js
+humanize().asDays(
+    date: Date
+): String
+```
+
+Set **days** as the highest unit of time for the translation. eg:
+
+| Input                           | Output              |
+| ------------------------------- | ------------------- |
+| `humanize().asDays(new Date())` | less than 1 day ago |
+
+### `humanize().asWeeks()`
+
+```js
+humanize().asWeeks(
+    date: Date
+): String
+```
+
+Set **weeks** as the highest unit of time for the translation. eg:
+
+| Input                                 | Output     |
+| ------------------------------------- | ---------- |
+| `humanize().asWeeks(oneMontInFuture)` | in 4 weeks |
+
+### `humanize().asMonths()`
+
+```js
+humanize().asMonths(
+    date: Date
+): String
+```
+
+Set **months** as the highest unit of time for the translation. eg:
+
+| Input                             | Output        |
+| --------------------------------- | ------------- |
+| `humanize().asMonths(oneYearAgo)` | 12 months ago |
+
+### `humanize().asYears()`
+
+```js
+humanize().asYears(
+    date: Date
+): String
+```
+
+Set **years** as the highest unit of time for the translation. eg:
+
+| Input                                   | Output              |
+| --------------------------------------- | ------------------- |
+| `humanize().asYears(fiveWeeksInFuture)` | in less than 1 year |
