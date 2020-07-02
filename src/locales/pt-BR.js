@@ -7,6 +7,8 @@ export const ptBR = {
     PAST_PLURAL: 'há {0} minutos',
     FUTURE_SINGULAR: 'em 1 minuto',
     FUTURE_PLURAL: 'em {0} minutos',
+    PAST_SINGULAR_LESS_THAN: 'há poucos segundos',
+    FUTURE_SINGULAR_LESS_THAN: 'em menos de 1 minuto',
   },
   HOUR: {
     NAME: 'hora',
@@ -14,6 +16,8 @@ export const ptBR = {
     PAST_PLURAL: 'há {0} horas',
     FUTURE_SINGULAR: 'em 1 hora',
     FUTURE_PLURAL: 'em {0} horas',
+    PAST_SINGULAR_LESS_THAN: 'há menos de 1 hora',
+    FUTURE_SINGULAR_LESS_THAN: 'em menos de 1 hora',
   },
   DAY: {
     NAME: 'dia',
@@ -21,6 +25,8 @@ export const ptBR = {
     PAST_PLURAL: 'há {0} dias',
     FUTURE_SINGULAR: 'amanhã',
     FUTURE_PLURAL: 'em {0} dias',
+    PAST_SINGULAR_LESS_THAN: 'há menos de 1 dia',
+    FUTURE_SINGULAR_LESS_THAN: 'em menos de 1 dia',
   },
   WEEK: {
     NAME: 'semana',
@@ -28,6 +34,8 @@ export const ptBR = {
     PAST_PLURAL: 'há {0} semanas',
     FUTURE_SINGULAR: 'próxima semana',
     FUTURE_PLURAL: 'em {0} semanas',
+    PAST_SINGULAR_LESS_THAN: 'há menos de 1 semana',
+    FUTURE_SINGULAR_LESS_THAN: 'em menos de 1 semana',
   },
   MONTH: {
     NAME: 'mês',
@@ -35,6 +43,8 @@ export const ptBR = {
     PAST_PLURAL: 'há {0} meses',
     FUTURE_SINGULAR: 'próximo mês',
     FUTURE_PLURAL: 'em {0} meses',
+    PAST_SINGULAR_LESS_THAN: 'há menos de 1 mês',
+    FUTURE_SINGULAR_LESS_THAN: 'em menos de 1 mês',
   },
   YEAR: {
     NAME: 'ano',
@@ -42,5 +52,7 @@ export const ptBR = {
     PAST_PLURAL: 'há {0} anos',
     FUTURE_SINGULAR: 'próximo ano',
     FUTURE_PLURAL: 'em {0} anos',
+    PAST_SINGULAR_LESS_THAN: 'há menos de 1 ano',
+    FUTURE_SINGULAR_LESS_THAN: 'em menos de 1 ano',
   },
 };
