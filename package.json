@@ -5,6 +5,9 @@
   "author": "Julio Sampaio <juliodssampaio@gmail.com> (https://github.com/juliosampaio)",
   "contributors": [],
   "main": "dist/humanize-duration.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "test": "jest",
     "lint": "npm run lint:src && npm run lint:tests",

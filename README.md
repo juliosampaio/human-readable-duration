@@ -1,10 +1,10 @@
 # human readable duration
 
-[![license](https://img.shields.io/npm/l/human-readable-duration)](https://github.com/juliosampaio/humanize-duration/blob/master/LICENCE)
+[![version](https://img.shields.io/github/package-json/v/juliosampaio/human-readable-duration)](https://img.shields.io/github/package-json/v/juliosampaio/human-readable-duration) [![license](https://img.shields.io/npm/l/human-readable-duration)](https://github.com/juliosampaio/humanize-duration/blob/master/LICENCE)
 
 Translate a duration to a human friendly format in any language\* (eg. 2 weeks ago)
 
-Think of _moment.duration().humanize()_ but lightweight (only 3k).
+Think of _moment.duration().humanize()_ but lightweight (only 3.5k).
 
 <small>_\* since you provide the translation_</small>
 
