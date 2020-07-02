@@ -1,7 +1,7 @@
 import { withTranslationProxy } from './locales';
 import { ONE_MINUTE, MINUTE, HOUR, DAY, WEEK, MONTH, YEAR } from './units';
 
-const UNITS = [MINUTE, HOUR, DAY, WEEK, MONTH];
+const UNITS_BY_SIZE = [MINUTE, HOUR, DAY, WEEK, MONTH, YEAR];
 
 const translate = (diff, { min, name: unitName }, locale) => {
   const val = Math.round(Math.abs(diff) / min);
@@ -26,13 +26,12 @@ const translate = (diff, { min, name: unitName }, locale) => {
   return isSingular ? PAST_SINGULAR : PAST_PLURAL;
 };
 
-const firstGreaterOrMax = (diff, max) => (unit) =>
-  Math.abs(diff) < unit.max || (max && unit.name === max);
+const firstGreater = (diff) => (unit) => Math.abs(diff) < unit.max;
 
-export const humanize = (locale) => (date, max) => {
+export const humanize = (locale) => (date) => {
   const diff = Date.now() - date.getTime();
 
-  const unit = UNITS.find(firstGreaterOrMax(diff, max)) || YEAR;
+  const unit = UNITS_BY_SIZE.find(firstGreater(diff));
 
   return translate(diff, unit, locale);
 };

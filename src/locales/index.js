@@ -19,9 +19,9 @@ const withUnitTranslationProxy = (unit, val, unitName, defaultLocale) => {
 export const withTranslationProxy = (locale = enUS, unitName, val) => {
   const handler = {
     get: (target, prop) => {
-      if (!AVAILABLE_UNITS.includes(prop)) return target[prop];
+      if (!AVAILABLE_UNITS.includes(prop)) return target[prop] || enUS[prop];
 
-      const unit = target[prop] || enUS[prop];
+      const unit = target[prop];
 
       return withUnitTranslationProxy(unit, val, unitName, enUS);
     },
