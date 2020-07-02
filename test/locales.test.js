@@ -6,16 +6,17 @@ import { ONE_MINUTE } from '../src/units';
 
 describe('locales', () => {
   it('should use default locale when no locale is specified', () => {
-    const translate = humanize();
+    const { translate } = humanize();
+
     expect(translate(new Date())).toBe(enUS.NOW);
   });
   it('should use the specified locale when given one', () => {
-    const translate = humanize(ptBR);
+    const { translate } = humanize(ptBR);
     expect(translate(new Date())).toBe(ptBR.NOW);
   });
   it('should fallback to default locale when missing any translation key', () => {
     const esES = { abbr: 'es-es', MINUTE: { FUTURE_SINGULAR: 'en un minuto' } };
-    const translate = humanize(esES);
+    const { translate } = humanize(esES);
     expect(translate(new Date())).toBe(enUS.NOW);
     const inOneMinute = add(1, ONE_MINUTE);
     expect(translate(inOneMinute)).toBe(esES.MINUTE.FUTURE_SINGULAR);
