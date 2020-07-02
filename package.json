@@ -1,6 +1,6 @@
 {
   "name": "human-readable-duration",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Translate a duration to a human friendly format in any language* (eg. 2 weeks ago)",
   "author": "Julio Sampaio <juliodssampaio@gmail.com> (https://github.com/juliosampaio)",
   "contributors": [],
