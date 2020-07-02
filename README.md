@@ -1,5 +1,7 @@
 # human readable duration
 
+[![license](https://img.shields.io/npm/l/human-readable-duration)](https://github.com/juliosampaio/humanize-duration/blob/master/LICENCE)
+
 Translate a duration to a human friendly format in any language\* (eg. 2 weeks ago)
 
 <small>_\* since you provide the translation_</small>
