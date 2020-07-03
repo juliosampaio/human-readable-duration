@@ -4,7 +4,7 @@
   "description": "Translate a duration to a human friendly format in any language* (eg. 2 weeks ago)",
   "author": "Julio Sampaio <juliodssampaio@gmail.com> (https://github.com/juliosampaio)",
   "contributors": [],
-  "main": "dist/humanize-duration.js",
+  "main": "dist/human-readable-duration.js",
   "files": [
     "dist/"
   ],
